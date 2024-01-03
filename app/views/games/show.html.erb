@@ -1,0 +1,20 @@
+<div>
+  <%= @game.id %>
+</div>
+<div>
+  <%= safe_join(@game.story.split("\n"),tag(:br)) %>
+</div>
+<% if @game.page_1 != @game.id %>
+  <%= link_to "#{@game.page_1}に行く", game_path(@game.page_1) %>
+<% end %>
+<% if @game.page_2 != @game.id %>
+  <%= link_to "#{@game.page_2}に行く", game_path(@game.page_2) %>
+<% end %>
+
+<div>
+<% if current_user.id == @game.user_id %>
+  <%= link_to "編集", edit_game_path(@game.id), method: :get %>
+  <%= link_to "削除", game_path(@game.id), data: { turbo_method: :delete }, class:"item-destroy" %>
+<% end %>
+</div>
+  <%= link_to "戻る", games_path %>

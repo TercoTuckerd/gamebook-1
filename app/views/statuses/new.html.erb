@@ -1,0 +1,59 @@
+<h1>ニューゲーム</h1>
+
+<%= form_with(model: @status, url: statuses_path, local: true) do |f| %>
+  <div>
+    <span>バトルポイント</span>
+    <div>
+      <span>A</span>
+      <%= f.text_field :battle_a, id:"status_battle_a"%>
+    </div>
+    <div>
+      <span>B</span>
+      <%= f.text_field :battle_b, id:"status_battle_b"%>
+    </div>
+    <div>
+      <span>C</span>
+      <%= f.text_field :battle_c, id:"status_battle_c"%>
+    </div>
+    <div>
+      <span>D</span>
+      <%= f.text_field :battle_d, id:"status_battle_d"%>
+    </div>
+    <div>
+      <span>E</span>
+      <%= f.text_field :battle_e, id:"status_battle_e"%>
+    </div>
+    <div>
+      <span>F</span>
+      <%= f.text_field :battle_f, id:"status_battle_f"%>
+    </div>
+    <div>
+      <span>G</span>
+      <%= f.text_field :battle_g, id:"status_battle_g"%>
+    </div>
+    <div>
+      <span>H</span>
+      <%= f.text_field :battle_h, id:"status_battle_h"%>
+    </div>
+    <div>
+      <span>I</span>
+      <%= f.text_field :battle_i, id:"status_battle_i"%>
+    </div>
+    <div>
+      <span>J</span>
+      <%= f.text_field :battle_j, id:"status_battle_j"%>
+    </div>
+  </div>
+  <div>
+    <span>能力設定</span>
+    <div>
+      <span>体力</span>
+      <%= f.text_field :hp, id:"status_hp"%>
+    </div>
+    <div>
+      <span>技術</span>
+      <%= f.text_field :tek, id:"status_tek"%>
+    </div>
+  </div>
+  <%= f.submit '新規作成' %>
+<% end %>

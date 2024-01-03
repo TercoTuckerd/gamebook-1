@@ -10,7 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_19_135534) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_30_061615) do
+  create_table "games", charset: "utf8", force: :cascade do |t|
+    t.text "story", null: false
+    t.integer "coin", null: false
+    t.integer "item", null: false
+    t.integer "page_1", null: false
+    t.integer "page_2", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "statuses", charset: "utf8", force: :cascade do |t|
+    t.integer "battle_a", null: false
+    t.integer "battle_b", null: false
+    t.integer "battle_c", null: false
+    t.integer "battle_d", null: false
+    t.integer "battle_e", null: false
+    t.integer "battle_f", null: false
+    t.integer "battle_g", null: false
+    t.integer "battle_h", null: false
+    t.integer "battle_i", null: false
+    t.integer "battle_j", null: false
+    t.integer "hp", null: false
+    t.integer "tek", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_statuses_on_user_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -24,4 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_19_135534) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "games", "users"
+  add_foreign_key "statuses", "users"
 end

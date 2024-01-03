@@ -1,24 +1,69 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type     | Options                   |
+| ------------------ | -------- | ------------------------- |
+| nickname           | string   | null: false               |
+| email              | string   | null: false, unique: true |
+| encrypted_password | string   | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :saves
+- has_many :statuses
+- has_many :games
 
-* Configuration
+## statuses テーブル
 
-* Database creation
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| battle_a     | integer     | null: false                   |
+| battle_b     | integer     | null: false                   |
+| battle_c     | integer     | null: false                   |
+| battle_d     | integer     | null: false                   |
+| battle_e     | integer     | null: false                   |
+| battle_f     | integer     | null: false                   |
+| battle_g     | integer     | null: false                   |
+| battle_h     | integer     | null: false                   |
+| battle_i     | integer     | null: false                   |
+| battle_j     | integer     | null: false                   |
+| hp           | integer     | null: false                   |
+| tek          | integer     | null: false                   |
+| user         | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many   :games
+- has_many   :saves
 
-* Services (job queues, cache servers, search engines, etc.)
+##  gamesテーブル
 
-* Deployment instructions
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| story        | text       | null: false                    |
+| coin         | integer    | null: false                    |
+| item         | integer    | null: false                    |
+| user         | references | null: false, foreign_key: true |
+| status       | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :status
+- belongs_to :user
+- has_many   :saves
+
+## saves テーブル
+
+| Column    | Type       | Options                        |
+| -------   | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| status    | references | null: false, foreign_key: true |
+| game      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :status
+- belongs_to :game
