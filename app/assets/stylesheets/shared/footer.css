@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 53px;
+  background-image: url('gekijou-footer.png');
+  background-size: cover;
+}

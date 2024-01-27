@@ -1,14 +1,21 @@
 <%= render "shared/header" %>
-<h1>トップページ</h1>
-<div>
-  <%= link_to(new_status_path, class: 'newgame-btn') do %>
-    <span class='newgame-btn-text'>NEW GAME</span>
-  <% end %>
-</div>
-
-<div>
-  <%= link_to(games_path, class: 'loadgame-btn') do %>
-    <span class='loadgame-btn-text'>LOAD</span>
-  <% end %>
+<div class="main">
+  <div class="main-box">
+    <h1 class="title">GAMEBOOK</h1>
+    <div class="select-box">
+    <div class="btn-box">
+      <div>
+        <%= link_to(new_status_path, class: 'newgame-btn') do %>
+          <span class='newgame-btn-text'>NEW GAME</span>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to(games_path, class: 'loadgame-btn') do %>
+          <span class='loadgame-btn-text'>LOAD</span>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
 <%= render "shared/footer" %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_30_061615) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_06_052841) do
   create_table "games", charset: "utf8", force: :cascade do |t|
     t.text "story", null: false
     t.integer "coin", null: false
@@ -36,9 +36,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_30_061615) do
     t.integer "battle_j", null: false
     t.integer "hp", null: false
     t.integer "tek", null: false
+    t.integer "coin", null: false
+    t.integer "item", null: false
     t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_statuses_on_game_id"
     t.index ["user_id"], name: "index_statuses_on_user_id"
   end
 
@@ -56,5 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_30_061615) do
   end
 
   add_foreign_key "games", "users"
+  add_foreign_key "statuses", "games"
   add_foreign_key "statuses", "users"
 end

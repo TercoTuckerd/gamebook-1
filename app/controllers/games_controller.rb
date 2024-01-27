@@ -20,6 +20,8 @@ class GamesController < ApplicationController
 
   def show
     @games = Game.all
+    @status = Status.new
+    @statuses = @game.statuses.includes(:user)
   end
 
   def edit

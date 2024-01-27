@@ -1,26 +1,35 @@
 <%= render "shared/header" %>
-<h2>遊び方</h2>
-
-  <%= link_to "冒険に出る", "http://localhost:3000/games/1" %>
-
-  <h2>物語一覧</h2>
-  <div>
+<div class="main">
+  <div class="text-box">
+    <div class="text">
+    <h2>遊び方</h2>
       <% if @games.present? %>
-      <% @games.each do |game| %>
-        <%= link_to game_path(game.id) do %>
-            <h3><%= game.id %></h3>
-        <% end %>
-      <% end %>
-
+        <%= link_to "冒険に出る", "http://localhost:3000/games/1" %>
       <% else %>
-        <%= link_to '#' do %>
-          <h3>物語はまだない…</h3>
+        <%= link_to "物語はまだない…", "http://localhost:3000/games/new" %>
+      <% end %>
+    </div>
+
+  <% if current_user.id == 1 %>
+  <div class="story-box">
+    <h2>物語一覧</h2>
+
+    <%= link_to(new_game_path) do %>
+      <span>投稿する</span>
+    <% end %>
+
+    <div class="story-contents">
+      <% if @games.present? %>
+        <% @games.each do |game| %>
+          <%= link_to game_path(game.id) do %>
+              <h3><%= game.id %></h3>
+          <% end %>
         <% end %>
       <% end %>
+    </div>
+  </div>
+  <% end %>
+  
   </div>
 </div>
-
-<%= link_to(new_game_path) do %>
-  <span>投稿する</span>
-<% end %>
 <%= render "shared/footer" %>

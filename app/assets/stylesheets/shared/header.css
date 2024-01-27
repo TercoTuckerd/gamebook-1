@@ -1,0 +1,32 @@
+.head-image {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 50px;
+  background-image: url('gekijou-head.png');
+  background-size: cover;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.nav {
+  padding: 0 30px 0 0;
+  line-height: 50px;
+}
+
+.login{
+  padding: 0 30px 0 0;
+}
+
+.user-nickname {
+  padding: 0 30px 0 0;
+}

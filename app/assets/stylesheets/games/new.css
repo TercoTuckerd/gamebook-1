@@ -1,0 +1,11 @@
+.story-new-box{
+  text-align: center;
+  color: white;
+  width: 900px;
+  height: 550px;
+  background-color: black;
+}
+
+.story-new {
+  font-size: 50px;
+}

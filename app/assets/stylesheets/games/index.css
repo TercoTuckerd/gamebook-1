@@ -1,0 +1,14 @@
+.text-box{
+  width: 900px;
+  height: 550px;
+  background-color: white;
+  margin-top: 25px;
+}
+
+.text{
+  height: 450px;
+}
+
+.story-contents{
+  display: flex;
+}

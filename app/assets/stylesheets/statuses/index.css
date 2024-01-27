@@ -1,0 +1,49 @@
+.main {
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  width: 100vw;
+  background-image: url('gekijou-main.png');
+  background-size: cover;
+}
+
+.main-box{
+  height: 400px;
+  padding-top: 100px;
+}
+
+.title {
+  color: white;
+  font-size: 100px;
+  <!--background-color: #551112;-->
+}
+
+.select-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.btn-box{
+  background-color: black;
+  text-align: center;
+}
+
+.newgame-btn {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.loadgame-btn {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.master-btn {
+  color: white;
+  text-decoration: none;
+}
