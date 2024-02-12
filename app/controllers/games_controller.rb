@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, only: [:index]
 
   def index
     @games = Game.all
@@ -49,4 +50,13 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
+  def move_to_index
+    if current_user == nil
+      redirect_to new_status_path(@status)
+    end
+
+    #if @status == nil
+      #redirect_to new_status_path(@status)
+    #end
+  end
 end

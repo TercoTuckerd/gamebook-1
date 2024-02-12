@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   #get 'statuses/index'
   root to: 'statuses#index'
   resources :users
-  resources :games #do
-    resources :statuses
-  #end
+  resources :statuses
+  resources :games
 end

@@ -21,9 +21,9 @@
         どうかエンディングを目指して頑張ってみてくださいね。
       </div><br>
       <% if @games.present? %>
-        <%= link_to "冒険に出る", "http://localhost:3000/games/1" %>
+        <%= link_to "冒険に出る", game_path(1) %>
       <% else %>
-        <%= link_to "物語はまだない…", "http://localhost:3000/games/new" %>
+        <%= link_to "物語はまだない…", new_game_path %>
       <% end %>
     </div>
 
