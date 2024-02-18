@@ -12,7 +12,7 @@ class StatusesController < ApplicationController
   def create
     @status = Status.new(status_params)
     if @status.save
-      redirect_to  games_path(@game)
+      redirect_to games_path(@game)
     else
       render :new, status: :unprocessable_entity
     end
