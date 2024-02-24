@@ -13,9 +13,15 @@
 }
 
 .title {
+  animation: blinking 0.1s linear infinite alternate;
   color: white;
   font-size: 100px;
   <!--background-color: #551112;-->
+}
+
+@keyframes blinking {
+	0% {opacity: 0.5;}
+	100% {opacity: 1;}
 }
 
 .select-box {
