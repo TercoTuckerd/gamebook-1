@@ -43,7 +43,7 @@ class GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:story, :coin, :item, :page_1, :page_2).merge(user_id: current_user.id)
+    params.require(:game).permit(:story, :page_1, :page_2).merge(user_id: current_user.id)
   end
 
   def set_game
@@ -52,7 +52,7 @@ class GamesController < ApplicationController
 
   def move_to_index
     if current_user == nil
-      redirect_to new_status_path(@status)
+      redirect_to action: :index #new_status_path(@status)
     end
 
     #if @status == nil

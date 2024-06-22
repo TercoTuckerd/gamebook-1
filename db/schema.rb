@@ -13,8 +13,6 @@
 ActiveRecord::Schema[7.0].define(version: 2024_01_06_052841) do
   create_table "games", charset: "utf8", force: :cascade do |t|
     t.text "story", null: false
-    t.integer "coin", null: false
-    t.integer "item", null: false
     t.integer "page_1", null: false
     t.integer "page_2", null: false
     t.bigint "user_id", null: false
@@ -24,20 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_06_052841) do
   end
 
   create_table "statuses", charset: "utf8", force: :cascade do |t|
-    t.integer "battle_a", null: false
-    t.integer "battle_b", null: false
-    t.integer "battle_c", null: false
-    t.integer "battle_d", null: false
-    t.integer "battle_e", null: false
-    t.integer "battle_f", null: false
-    t.integer "battle_g", null: false
-    t.integer "battle_h", null: false
-    t.integer "battle_i", null: false
-    t.integer "battle_j", null: false
-    t.integer "hp", null: false
-    t.integer "tek", null: false
-    t.integer "coin", null: false
-    t.integer "item", null: false
+    t.text "text", null: false
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
     t.datetime "created_at", null: false

@@ -1,4 +1,5 @@
 class StatusesController < ApplicationController
+  before_action :set_status, only: [:edit, :show, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
   
   def index
@@ -12,7 +13,7 @@ class StatusesController < ApplicationController
   def create
     @status = Status.new(status_params)
     if @status.save
-      redirect_to games_path(@game)
+      redirect_to "/games/#{status.game.id}"
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,9 +21,30 @@ class StatusesController < ApplicationController
 
   def show
   end
+
+  def edit
+  end
+
+  def update
+    if @status.update(status_params)
+      redirect_to games_path(@game)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @status.destroy
+    redirect_to games_path(@game)
+  end
   
   private
   def status_params
-    params.require(:status).permit(:battle_a, :battle_b, :battle_c, :battle_d, :battle_e, :battle_f, :battle_g, :battle_h, :battle_i, :battle_j, :hp, :tek, :coin, :item).merge(user_id: current_user.id, game_id: 1)
+    params.require(:status).permit(:text).merge(user_id: current_user.id, game_id: params[:game_id])
   end
+
+  def set_status
+    @status = status.find(params[:id])
+  end
+
 end

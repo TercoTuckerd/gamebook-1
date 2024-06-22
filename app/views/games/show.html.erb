@@ -16,33 +16,26 @@
     <% end %>
     </div>
 
+    <div class="statuses">
+      <%= form_with(model: [@game, @status], local: true) do |form|%>
+        <%= form.text_field :text, class: 'statuses-text', placeholder: "細かくメモしよう", rows: "2" %>
+        <%= form.submit "保存", class: 'statuses-post' %>
+      <% end %>
+    </div>
+
     <div class="story-box">
       <% if current_user.id == @game.user_id %>
         <%= link_to "編集", edit_game_path(@game.id), method: :get %>
         <%= link_to "削除", game_path(@game.id), data: { turbo_method: :delete } %>
       <% end %>
     </div>
+
+    <div class="memo">
+      <% @statuses.each do |status| %>
+        <%= status.text %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div>
-<!--プレイヤー情報
-<% @statuses.each do |status| %>
-  アイテム
-  <span id="items"><%= status.item %></span>
-  コイン
-  <span id="coins"><%= status.coin %></span>
-  現在のページ
-  <span id="pages"><%= status.game_id%></span>
-<% end %>
-<div>
-
-<div>
-ゲームデータ　
-  アイテム
-  <%= @game.item %>
-  コイン
-  <%= @game.coin %>
-</div>
--->
 <%= render "shared/footer" %>

@@ -1,6 +1,6 @@
 .text-box{
   width: 900px;
-  height: 550px;
+  height: 450px;
   background-color: white;
   margin-top: 25px;
 }
@@ -11,4 +11,21 @@
 
 .story-contents{
   display: flex;
+}
+
+.statuses{
+  display: flex;
+  width: 100%;
+}
+
+.statuses-text{
+}
+
+.statuses-post{
+}
+
+.memo{
+  width: 900px;
+  height: 60px;
+  background-color: white;
 }

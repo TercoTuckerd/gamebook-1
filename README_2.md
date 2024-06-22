@@ -14,7 +14,7 @@
 - has_many :statuses
 - has_many :games
 
-## statuses テーブル
+## statuses テーブル(本命)
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
@@ -38,15 +38,46 @@
 - has_many   :games
 - has_many   :saves
 
-##  gamesテーブル
+##  gamesテーブル(本命)
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | story        | text       | null: false                    |
 | coin         | integer    | null: false                    |
 | item         | integer    | null: false                    |
+| page_1       | integer    | null: false                    |
+| page_2       | integer    | null: false                    |
 | user         | references | null: false, foreign_key: true |
 | status       | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :status
+- belongs_to :user
+- has_many   :saves
+
+## statuses テーブル(仮)
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| text         | integer    | null: false                    |
+| game         | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :game
+- has_many   :saves
+
+##  gamesテーブル(仮)
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| story        | text       | null: false                    |
+| page_1       | integer    | null: false                    |
+| page_2       | integer    | null: false                    |
+| user         | references | null: false, foreign_key: true |
 
 ### Association
 

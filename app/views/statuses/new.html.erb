@@ -1,9 +1,10 @@
 <div class="main-ura">
   <div class="status-box">
-  <h1 class="new-title">NEWGAME</h1>
+  <h1 class="new-title">MEMO</h1>
 
   <%= form_with(model: @status, url: statuses_path, local: true) do |f| %>
     <div class="battle-box">
+    <!--
       <span>バトルポイント</span>
       <div>
         <span>A</span>
@@ -70,12 +71,15 @@
           <%= f.text_field :coin, :value => "0", :readonly => true, id:"status_coin"%>
         </div>
     </div>
-
-    <%= f.submit '新規作成' %>
-  <% end %>
+    -->
+    <div>
+      <%= f.text_area :text, id:"status_text", placeholder:"細かくメモを取ろう" %>
+    </div>
+    <%= f.submit '保存' %>
   <div>
-    <h1><a href="/statuses">TOPに戻る</a></h1>
+    <%=link_to 'もどる', games_path(@game) %>
   </div>
+  <% end %>
   </div>
 
   <div class="copyright">
