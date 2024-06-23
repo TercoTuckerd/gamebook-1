@@ -18,14 +18,10 @@
   width: 100%;
 }
 
-.statuses-text{
-}
-
-.statuses-post{
-}
-
 .memo{
   width: 900px;
   height: 60px;
   background-color: white;
+  margin-top: 10px;
+  overflow: scroll;
 }

@@ -23,16 +23,20 @@
       <% end %>
     </div>
 
+    <div class="memo">
+      <% @statuses.each do |status| %>
+      <% if user_signed_in? && current_user.id == status.user_id %>
+        <p>
+          <%= status.text %>
+        </p>
+      <% end %>
+      <% end %>
+    </div>
+
     <div class="story-box">
       <% if current_user.id == @game.user_id %>
         <%= link_to "編集", edit_game_path(@game.id), method: :get %>
         <%= link_to "削除", game_path(@game.id), data: { turbo_method: :delete } %>
-      <% end %>
-    </div>
-
-    <div class="memo">
-      <% @statuses.each do |status| %>
-        <%= status.text %>
       <% end %>
     </div>
   </div>
