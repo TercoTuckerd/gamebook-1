@@ -2,18 +2,18 @@
 <div class="main">
   <div class="text-box">
    <div class="story">
-    <div>
-      <span id="game-id"><%= @game.id %></span>
-    </div>
-    <div>
-      <%= safe_join(@game.story.split("\n"),tag(:br)) %>
-    </div>
-    <% if @game.page_1 != @game.id %>
-      <span id="links_1"><%= link_to "#{@game.page_1}に行く", game_path(@game.page_1) %></span>
-    <% end %>
-    <% if @game.page_2 != @game.id %>
-      <span id="links_2"><%= link_to "#{@game.page_2}に行く", game_path(@game.page_2) %></span>
-    <% end %>
+      <div>
+        <span id="game-id"><%= @game.id %></span>
+      </div>
+      <div>
+        <%= safe_join(@game.story.split("\n"),tag(:br)) %>
+      </div>
+      <% if @game.page_1 != @game.id %>
+        <span id="links_1"><%= link_to "#{@game.page_1}に行く", game_path(@game.page_1) %></span>
+      <% end %>
+      <% if @game.page_2 != @game.id %>
+        <span id="links_2"><%= link_to "#{@game.page_2}に行く", game_path(@game.page_2) %></span>
+      <% end %>
     </div>
 
     <div class="statuses">
@@ -25,11 +25,11 @@
 
     <div class="memo">
       <% @statuses.each do |status| %>
-      <% if user_signed_in? && current_user.id == status.user_id %>
-        <p>
-          <%= status.text %>
-        </p>
-      <% end %>
+        <% if user_signed_in? && current_user.id == status.user_id %>
+          <p>
+            <%= status.text %>
+          </p>
+        <% end %>
       <% end %>
     </div>
 

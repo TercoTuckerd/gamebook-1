@@ -5,6 +5,10 @@
   margin-top: 25px;
 }
 
+.story{
+  overflow: scroll;
+}
+
 .text{
   height: 450px;
 }
