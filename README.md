@@ -84,13 +84,6 @@ https://docs.google.com/spreadsheets/d/1rKI6oXFkCp3c4ss8rzp5fdW_0bm7kp48RzLv3wky
 ### ブラウザバックの禁止
 [![Image from Gyazo](https://i.gyazo.com/ae207179bf92aa67f222a6fe9a26344d.gif)](https://gyazo.com/ae207179bf92aa67f222a6fe9a26344d)
 
-## 実装予定の機能
-・バリデーションと手打ち入力の防止  
-・管理者のみの権限をより強固にするための権限実装  
-・画面遷移することでゲーム内容に内包されている情報をステータスに反映させるJavascriptの実装  
-・ゲーム性を強めるためのENEMY情報の追加  
-・管理者以外のゲーム作成、投稿機能
-
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/c5c07af48b225b397cd3e8b4bc678728.png)](https://gyazo.com/c5c07af48b225b397cd3e8b4bc678728)
 
