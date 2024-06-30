@@ -19,7 +19,7 @@
     <div class="statuses">
       <%= form_with(model: [@game, @status], local: true) do |form|%>
         <%= form.text_field :text, class: 'statuses-text', placeholder: "細かくメモしよう", rows: "2" %>
-        <%= form.submit "保存", class: 'statuses-post' %>
+        <%= form.submit "SAVE", class: 'statuses-post' %>
       <% end %>
     </div>
 
@@ -32,6 +32,12 @@
         <% end %>
       <% end %>
     </div>
+    
+
+    <div class="save-bottom">
+      <%# link_to "セーブデータ一覧", game_status_path %>
+    </div>
+    -->
 
     <div class="story-box">
       <% if current_user.id == @game.user_id %>

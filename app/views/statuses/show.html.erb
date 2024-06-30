@@ -1,12 +1,14 @@
-<h1>セーブデータ一覧</h1>
+<div class="main-ura">
+  <h1>セーブデータ一覧</h1>
 
-<div class="game_saves">
-  <ul class="saves_lists">
-    <% @saves.each do |save| %>
-      <li class="saves_list">
-        <%= save.content %>
-        <%= link_to save.user.name, user_path(save.user), class: :save_user %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="game_saves">
+    <ul class="saves_lists">
+      <% @saves.each do |save| %>
+        <li class="saves_list">
+          <%= save.content %>
+          <%= link_to save.user.name, user_path(save.user), class: :save_user %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
