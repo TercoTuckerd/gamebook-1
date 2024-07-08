@@ -81,7 +81,7 @@
 
 ### Association
 
-- belongs_to :status
+- has_many :status
 - belongs_to :user
 - has_many   :saves
 
